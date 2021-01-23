@@ -26,6 +26,23 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+
+			<dependency>
+				<groupId>com.oracle.database.jdbc</groupId>
+				<artifactId>ojdbc8-production</artifactId>
+				<version>19.7.0.0</version>
+				<type>pom</type>
+			</dependency>
+
+
+
+		<!-- Spring boot JDBC Library -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -42,7 +59,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--			<version>2.4.2</version>-->
+<!--		</dependency>-->
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>repo1</id>
+			<url>https://repo1.maven.org/maven2/</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
