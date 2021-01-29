@@ -1,7 +1,7 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:sec="" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/common :: head('Hello, Spring Boot')">
+<head th:replace="fragments/common :: head('MAIN PAGE')">
 </head>
 
 <body>
@@ -11,9 +11,9 @@
     <main role="main" class="container">
 
         <div class="starter-template">
-            <h1>Spring Boot Tutorial</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text
-                and a mostly barebones HTML document.</p>
+            <p class="lead">
+                <img src="td01.png" th:src="@{/img/td01.png}" style="width:60%;" />
+            </p>
         </div>
 
     </main>
