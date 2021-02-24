@@ -1,6 +1,8 @@
 package com.godcoder.myhome.controller;
 
+import com.godcoder.myhome.model.Event;
 import com.godcoder.myhome.model.User;
+import com.godcoder.myhome.repository.EventRepository;
 import com.godcoder.myhome.repository.UserRepository;
 import com.godcoder.myhome.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,6 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -28,20 +29,19 @@ public class UserController {
     public String list(Model model){
         List<User> users = userRepository.findAll();
         model.addAttribute("users",users);
-
         return "user/user_list";
     }
 
     @PostMapping("/list")
     public String register(User user){
         List<User> users = userRepository.findAll();
-        System.out.println("users");
-        int i;
-        for( i=0 ; i < users.size(); i++){
+//        System.out.println("users");
+
+        for( int i=0 ; i < users.size(); i++){
             String password = passwordEncoder.encode(users.get(i).getPassword());;
             Integer user_id = users.get(i).getUser_id();
             userRepository.update(password,user_id);
         }
-        return "redirect:/";
+        return "redirect:/user/list";
     }
 }

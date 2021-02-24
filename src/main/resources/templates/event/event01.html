@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/common :: head('Quiz&퀴즈!!')">
+</head>
+<body>
+    <div class="starter-template">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" >
+                      <img src="/img/quiz50.png" th:src="@{/img/quiz50.png}" width="100%">
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q1">
+                        <label>1.동아지질의 핵심가치가 아닌 것은?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab1" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q1_1" data-toggle="list" href="#" role="tab" aria-controls="0"> 1. 사랑하는 마음</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q1_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 진취적인 생각</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q1_3" data-toggle="list" href="#" role="tab" aria-controls="1"> 3. 협동하는 자세</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q1_4" data-toggle="list" href="#" role="tab" aria-controls="0"> 4. 적극적인 행동</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q2">
+                        <label>2.현재 동아지질 사무실의 위치가 아닌 곳은 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab2" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q2_1" data-toggle="list" href="#" role="tab" aria-controls="0"> 1. 서울</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q2_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 홍콩</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q2_3" data-toggle="list" href="#" role="tab" aria-controls="0"> 3. 싱가폴</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q2_4" data-toggle="list" href="#" role="tab" aria-controls="1"> 4. 뉴욕</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q3">
+                        <label>3.동아지질의 인재상이 아닌 것은 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab3" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q3_1" data-toggle="list" href="#" role="tab" aria-controls="1"> 1. 능동인</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q3_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 세계인</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q3_3" data-toggle="list" href="#" role="tab" aria-controls="0"> 3. 창조인</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q3_4" data-toggle="list" href="#" role="tab" aria-controls="0"> 4. 다능인</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q4">
+                        <label>4.동아지질의 올바른 영문 표기법은 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab4" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q4_1" data-toggle="list" href="#" role="tab" aria-controls="1"> 1. Dong-Ah Geological Engineering Company Ltd.</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q4_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. Dong-Ah Geographic Engineering Company Ltd.</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q4_3" data-toggle="list" href="#" role="tab" aria-controls="0"> 3. Dong-Ah Geographic Electronic Company Ltd.</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q4_4" data-toggle="list" href="#" role="tab" aria-controls="0"> 4. Dong-Ah Geological Electronic Company Ltd.</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q5">
+                        <label>5.동아지질의 사업부서가 아는 것은 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab5" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q5_1" data-toggle="list" href="#" role="tab" aria-controls="0"> 1. 터널사업부</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q5_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 지반기술사업</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q5_3" data-toggle="list" href="#" role="tab" aria-controls="1"> 3. 주류사업</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q5_4" data-toggle="list" href="#" role="tab" aria-controls="0"> 4. 일반토목사업부</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q6">
+                        <label>6.동아지질은 '무엇'에 관한 설계에서 시공까지 세계제일을 추구한다. '무엇'을 의미하는 단어는?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab6" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q6_1" data-toggle="list" href="#" role="tab" aria-controls="0"> 1. 돌</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q6_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 물</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q6_3" data-toggle="list" href="#" role="tab" aria-controls="0"> 3. 모래</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q6_4" data-toggle="list" href="#" role="tab" aria-controls="1"> 4. 흙</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q7">
+                        <label>7.동아지질 거래소에 상장한 년도 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab7" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q7_1" data-toggle="list" href="#" role="tab" aria-controls="0"> 1. 1971년</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q7_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 2002년</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q7_3" data-toggle="list" href="#" role="tab" aria-controls="1"> 3. 2009년</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q7_4" data-toggle="list" href="#" role="tab" aria-controls="0"> 4. 2011년</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q8">
+                        <label>8.동아지질 본사는 부산시 금정구 ?동에 위치해 있습니다. ?표에 해당하는 지역명칭은 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab8" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q8_1" data-toggle="list" href="#" role="tab" aria-controls="0"> 1. 강호동</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q8_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 신동</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q8_3" data-toggle="list" href="#" role="tab" aria-controls="1"> 3. 구서동</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q8_4" data-toggle="list" href="#" role="tab" aria-controls="0"> 4. 김을동</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q9">
+                        <label>9.동아지질의 최초 회사명 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab9" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q9_1" data-toggle="list" href="#" role="tab" aria-controls="1"> 1. 동아지질콘설탄트</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q9_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 동아지질콘트랙트</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q9_3" data-toggle="list" href="#" role="tab" aria-controls="0"> 3. 동아지질컨테이너</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q9_4" data-toggle="list" href="#" role="tab" aria-controls="0"> 4. 동아지질콤바인</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-12 text-left" id="q0">
+                        <label>10.동아지질의 창립일자는 ?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group" id="list-tab0" role="tablist">
+                            <a class="list-group-item list-group-item-action text-left" id="q0_1" data-toggle="list" href="#" role="tab" aria-controls="0"> 1. 3월 6일</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q0_2" data-toggle="list" href="#" role="tab" aria-controls="0"> 2. 3월 17일</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q0_3" data-toggle="list" href="#" role="tab" aria-controls="0"> 3. 3월 23일</a>
+                            <a class="list-group-item list-group-item-action text-left" id="q0_4" data-toggle="list" href="#" role="tab" aria-controls="1"> 4. 3월 26일</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form id="event01_form" action="#" th:action="@{'/event/event01'}" method="post">
+                            <div class="form-group">
+                                <input  type="hidden" class="form-control" id="user_id" name="user_id" th:value="${user_id}"/>
+                                <input  type="hidden" class="form-control" id="event_type" name="event_type" value="1"/>
+                                <input  type="hidden" class="form-control" id="event_score" name="event_score"/>
+                                <input  style="display:none;" type="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 text-left">
+                        <a class="btn btn-warning" th:href="@{'/'}" ><i class="bi bi-house"></i> 뒤로</a>
+                    </div>
+                    <div class="col-6 text-right">
+                        <button type="button" class="btn btn-success btn-outline" id="btn_evnet01_modal">
+                            <i class="bi bi-check2-circle"></i> 제출하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade" id="event01_modal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h4 class="text-success"><i class="bi bi-patch-check-fill"></i> 축하합니다 :D</h4>
+                    <h4 class="text-secondary">퀴즈 이벤트를 완료하셨습니다!</h4>
+                    <h5>당신의 점수는?</h5>
+                    <div><h5 id="score"></h5></div>
+                    <img id="e0_img" src=""  width="100%">
+                    <div id="e0_note">
+                        <hr class="my-4">
+                        <h6 class="text-center text-danger"><i class="bi bi-pencil"></i> 오답노트 >< </h6>
+                        <hr class="my-4">
+                        <div id="event01_answer"></div>
+                    </div>
+                    <hr class="my-4">
+                    <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">
+                        <i class="bi bi-house"></i> 이벤트 메인페이지로 이동
+                    </button>
+                    <div class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <span> 10초후 자동으로 종료 됩니다:)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  script    -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+            integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+            crossorigin="anonymous"></script>
+    <script>
+
+
+        $(function(){
+
+            $('#btn_evnet01_modal').on('click',function(e){
+
+                var vChk=0, vScore=0, vChkCnt=0;
+
+                for(var i = 0 ; i < 10 ; i++){
+                    vChk = $("#list-tab"+i+">.active").attr('aria-controls');
+                    if(vChk == undefined){
+                        vChkCnt++;
+                    }
+                }
+
+                if(vChkCnt == 0){
+                    for(var i = 0 ; i < 10 ; i++){
+
+                        vChk = $("#list-tab"+i+">.active").attr('aria-controls');
+
+                        if(vChk == 0){
+                            var vid = $("#list-tab"+i+">.active").attr('id');
+                            var qid = vid.substring(0,2);
+                            var gid = $("#list-tab"+i+">.list-group-item[aria-controls=1]").attr('id');
+
+                            $("#"+vid).css('color','red');
+                            $("#"+vid).removeClass('active');
+                            $("#"+gid).addClass('active');
+
+                            $("#"+qid).clone().appendTo("#event01_answer");
+                            $("#list-tab"+i).clone().appendTo("#event01_answer");
+                            $("#event01_answer").append('<hr class="my-4">');
+                        }else if(vChk == 1){
+                            vScore++;
+                        }
+
+                        if(i==9){
+
+                            var v_img_url='';
+
+                            $('#score').text(vScore*10+"점");
+                            if(vScore == 10){
+                                $("#e0_note").hide();
+                            }
+
+                            if(vScore > 7){
+                                v_img_url = "/img/good.gif";
+                            }else if(vScore > 3){
+                                v_img_url = "/img/bad.gif";
+                            }else{
+                                v_img_url = "/img/warning.gif";
+                            }
+
+                            $("#e0_img").attr('src',v_img_url);
+                            $("#event_score").val(vScore*10);
+                            $('#event01_modal').modal('show');
+                        }
+                    }
+                }else{
+                    alert("풀지않은 문제가 있습니다.\n모든 문제의 답을 선택 후  제출 버튼을 클릭해 주세요:D");
+                }
+
+            });
+
+            $('#event01_modal').on('shown.bs.modal', function (e) {
+
+                setTimeout(function(){
+                    $('#event01_modal').modal('hide');
+                },10000);
+             });
+
+            $('#event01_modal').on('hidden.bs.modal', function (e) {
+                $('#event01_form').submit();
+             });
+
+        });
+    </script>
+
+
+</body>
+</html>

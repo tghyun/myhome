@@ -17,26 +17,30 @@
     <form class="form-signin" th:action="@{/account/login}" method="post">
 <!--        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
         <img class="mb-4" src="donga.gif" th:src="@{/img/donga.gif}" alt="" width="80%" height="auto">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
         <div th:if="${param.error}" class="alert alert-danger" role="alert">
-            Invalid username and password.
+            이메일 주소 또는 비밀번호를 확인하세요.
         </div>
         <div th:if="${param.logout}" class="alert alert-primary" role="alert">
-            You have been logged out.
+            로그아웃 되었습니다.
         </div>
 
         <label for="username" class="sr-only">username</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="username" required autofocus>
+        <input type="email" id="username" name="username" class="form-control" placeholder="이메일 주소" required autofocus>
         <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <input type="password" id="password" name="password" class="form-control" placeholder="비밀번호" required>
     <!--    <div class="checkbox mb-3">-->
     <!--        <label>-->
     <!--            <input type="checkbox" value="remember-me"> Remember me-->
     <!--        </label>-->
     <!--    </div>-->
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+        <br>
+        <p class="font-weight-lighter"><small>이벤트 기간은 3월 2일 부터 3월 16일까지 입니다.</small></p>
+        <small>정보보호법에 따라 이벤트에 사용되는 개인정보는</small><br>
+        <small>이벤트 종료 시 자동 삭제됩니다.</small>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

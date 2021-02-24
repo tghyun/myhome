@@ -25,6 +25,11 @@ public class BoardController {
        return "board/list";
     }
 
+    @GetMapping("/post")
+    public String post(){
+        return "board/post";
+    }
+
     @GetMapping("/form")
     public String form(Model model, @RequestParam(required = false) String id){
         if(id==null){

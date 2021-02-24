@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head(title)">
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no">
     <!-- Bootstrap core CSS -->
 
     <!-- Bootstrap CSS -->
@@ -12,7 +13,10 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="starter-template.css" th:href="@{/css/starter-template.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title th:text="${title}">Welcome, DongA</title>
+
+
 </head>
 <body>
 
@@ -28,19 +32,29 @@
                 <li class="nav-item" th:classappend="${menu}== 'home' ? 'active'">
                     <a class="nav-link" href="#" th:href="@{/}">홈 <span class="sr-only" th:if="${menu}=='home'">(current)</span></a>
                 </li>
-<!--                <li class="nav-item" th:classappend="${menu}== 'board' ? 'active'">-->
-<!--                    <a class="nav-link" href="#" th:href="@{/board/list}">게시판<span class="sr-only" th:if="${menu}=='board'">(current)</span></a>-->
-<!--                </li>-->
                 <li class="nav-item" th:classappend="${menu}== 'user' ? 'active'">
                     <a class="nav-link" href="#" th:href="@{/user/list}">사용자<span class="sr-only" th:if="${menu}=='user'">(current)</span></a>
                 </li>
-                <li class="nav-item" th:classappend="${menu}== 'proj' ? 'active'">
-                    <a class="nav-link" href="#" th:href="@{/proj/list}">부서/현장<span class="sr-only" th:if="${menu}=='proj'">(current)</span></a>
+                <li class="nav-item" th:classappend="${menu}== 'board' ? 'active'">
+                    <a class="nav-link" href="#" th:href="@{/board/post}">역사사료UP!UP!<span class="sr-only" th:if="${menu}=='board'">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" th:href="@{/account/logout/result}">로그아웃<span class="sr-only">(current)</span></a>
-                </li>
+<!--                <li class="nav-item" th:classappend="${menu}== 'proj' ? 'active'">-->
+<!--                    <a class="nav-link" href="#" th:href="@{/proj/list}">부서/현장<span class="sr-only" th:if="${menu}=='proj'">(current)</span></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#" th:href="@{/account/logout/result}">로그아웃<span class="sr-only">(current)</span></a>-->
+<!--                </li>-->
             </ul>
+            <a class="btn btn-secondary my-2 my-sm-0" th:href="@{/account/login}"
+               sec:authorize="!isAuthenticated()">login</a>
+            <form class="form-inline my-2 my-lg-0" sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
+                welcome <span class="mx-2" sec:authentication="name">user</span>
+<!--                <span class="mx-2" sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>-->
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit" >logout</button>
+            </form>
+
+
+
         </div>
     </nav>
 </body>

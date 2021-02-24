@@ -1,9 +1,6 @@
 package com.godcoder.myhome.model;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +20,7 @@ public class User {
                     generator = "USER_SEQ_GEN")
     private Integer user_id;
     private String username;
+    private String name;
     private String password;
     private boolean enabled;
 
@@ -32,6 +30,7 @@ public class User {
             joinColumns = @JoinColumn(name="user_id"),
             inverseJoinColumns = @JoinColumn(name="role_id")
     )
-     private List<Role> roles = new ArrayList<>();
+
+    private List<Role> roles = new ArrayList<>();
 
 }

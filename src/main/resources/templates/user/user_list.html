@@ -7,16 +7,13 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"  th:replace="fragments/common :: menu('user')">
 </nav>
-<div class="container" style="height:500px;">
+<div class="starter-template">
     <div class="text-right">
         *총 건수 : <span th:text="${#lists.size(users)}"></span>
 
 <!--        <a type="buttton" class="btn btn-primary" th:href="@{/board/form}">쓰기</a>-->
     </div>
 
-    <form th:action="@{/user/list}" method="post">
-        <button type="submit" class="btn btn-danger">save</button>
-    </form>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -33,6 +30,10 @@
         </tr>
         </tbody>
     </table>
+
+    <form th:action="@{/user/list}" method="post">
+        <button type="submit" class="btn btn-danger">save</button>
+    </form>
 
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

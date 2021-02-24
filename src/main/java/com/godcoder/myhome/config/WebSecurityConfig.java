@@ -27,20 +27,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/account/register","/css/**","/img/**").permitAll()
+                .antMatchers("/","/account/register","/css/**","/img/**","/js/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/account/login")
+                //.defaultSuccessUrl("/event/event_home", true)
                 .permitAll()
                 .and()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/account/logout"))
-                .logoutSuccessUrl("/account/logout/result")
                 .invalidateHttpSession(true)
-//                .permitAll()
+                .permitAll()
                 .and()
-                .exceptionHandling().accessDeniedPage("/account/denied")
+                .sessionManagement()
+                //.maximumSessions(1)
+                // .maxSessionsPreventsLogin(true)
+                // .logoutRequestMatcher(new AntPathRequestMatcher("/account/logout"))
+                // .logoutSuccessUrl("/account/logout/result")
+                // .and()
+                // .exceptionHandling().accessDeniedPage("/account/denied")
         ;
     }
 
